@@ -14,6 +14,9 @@ public class UserEntity {
     private String name;
     private Integer age;
 
+    public UserEntity() {
+    }
+
     public UserEntity(User user) {
         this.id = user.getId();
         this.name = user.getName();

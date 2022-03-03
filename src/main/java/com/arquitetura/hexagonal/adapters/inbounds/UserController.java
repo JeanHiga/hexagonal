@@ -2,9 +2,9 @@ package com.arquitetura.hexagonal.adapters.inbounds;
 
 import com.arquitetura.hexagonal.application.core.domain.User;
 import com.arquitetura.hexagonal.application.ports.inbounds.UserServicePortIn;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +21,11 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers(){
         return userServicePortIn.findAllUsers();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public User saveUser(@RequestBody UserRequest userRequest){
+        return userServicePortIn.saveUser(userRequest);
     }
 }

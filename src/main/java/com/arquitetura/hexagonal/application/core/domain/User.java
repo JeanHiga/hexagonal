@@ -1,5 +1,7 @@
 package com.arquitetura.hexagonal.application.core.domain;
 
+import com.arquitetura.hexagonal.adapters.inbounds.UserRequest;
+
 public class User {
 
     private Long id;
@@ -13,6 +15,11 @@ public class User {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    public User(UserRequest userRequest) {
+        this.name = userRequest.getName();
+        this.age = userRequest.getAge();
     }
 
     public Long getId() {

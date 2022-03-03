@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class FindAllUsersAdapterOut implements UserServicePortOut {
+public class UsersAdapterOut implements UserServicePortOut {
 
     private final UserRepository userRepository;
 
-    public FindAllUsersAdapterOut(UserRepository userRepository) {
+    public UsersAdapterOut(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

@@ -1,7 +1,7 @@
 package com.arquitetura.hexagonal.config;
 
-import com.arquitetura.hexagonal.adapters.outbounds.FindAllUsersAdapterOut;
-import com.arquitetura.hexagonal.application.core.service.FindAllUsersService;
+import com.arquitetura.hexagonal.adapters.outbounds.UsersAdapterOut;
+import com.arquitetura.hexagonal.application.core.service.AllUsersService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class Config {
 
     @Bean
-    FindAllUsersService findAllUsersService(FindAllUsersAdapterOut findAllUsersAdapterOut){
-        return new FindAllUsersService(findAllUsersAdapterOut);
+    AllUsersService findAllUsersService(UsersAdapterOut findAllUsersAdapterOut){
+        return new AllUsersService(findAllUsersAdapterOut);
     }
 }
